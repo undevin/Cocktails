@@ -43,11 +43,24 @@
                                     </label>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eLT-nl-FwR">
+                                <rect key="frame" x="15" y="805" width="384" height="42"/>
+                                <color key="backgroundColor" systemColor="linkColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="Random Drink">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="randomDrinkButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6du-pM-48b"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="GAE-CR-Yo9" firstAttribute="top" secondItem="FWr-ET-PYy" secondAttribute="bottom" constant="50" id="1Uz-Lx-dtp"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="eLT-nl-FwR" secondAttribute="trailing" constant="15" id="4Yw-tg-hRk"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="eLT-nl-FwR" secondAttribute="bottom" constant="15" id="DsV-WE-Fbg"/>
                             <constraint firstItem="GAE-CR-Yo9" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.8" id="YEB-xw-gYF"/>
                             <constraint firstItem="FWr-ET-PYy" firstAttribute="top" secondItem="P4C-9j-0hm" secondAttribute="bottom" constant="10" id="ZA7-Ht-7ic"/>
                             <constraint firstItem="FWr-ET-PYy" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="a58-cI-qt3"/>
@@ -55,6 +68,7 @@
                             <constraint firstItem="GAE-CR-Yo9" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="jUX-8K-fq3"/>
                             <constraint firstItem="P4C-9j-0hm" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="mxb-Bc-Gpc"/>
                             <constraint firstItem="P4C-9j-0hm" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="tKz-bO-1fa"/>
+                            <constraint firstItem="eLT-nl-FwR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="ycv-zK-qCG"/>
                             <constraint firstItem="FWr-ET-PYy" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.7" id="z8T-a4-VCu"/>
                         </constraints>
                     </view>
@@ -71,6 +85,9 @@
         </scene>
     </scenes>
     <resources>
+        <systemColor name="linkColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

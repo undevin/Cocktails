@@ -23,6 +23,20 @@ class DrinksViewController: UIViewController {
         searchBar.delegate = self
     }
     
+    // MARK: - Actions
+    @IBAction func randomDrinkButtonTapped(_ sender: UIButton) {
+        DrinkController.fetchRandomDrink { (result) in
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let drink):
+                    self.fetchandUpdateViews(drink: drink)
+                case .failure(let error):
+                    self.presentErrorToUser(localizedError: error)
+                }
+            }
+        }
+    }
+    
     // MARK: - Methods
     func fetchandUpdateViews(drink: Drink) {
         DrinkController.fetchDrinkImage(drink: drink) { (result) in
@@ -39,12 +53,11 @@ class DrinksViewController: UIViewController {
         }
     }
     
-    
 }//End of Class
 
 extension DrinksViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        guard let searchTerm = searchBar.text else { return }
+        guard let searchTerm = searchBar.text?.capitalized else { return }
         
         DrinkController.fetchDrinks(searchTerm: searchTerm) { (result) in
             DispatchQueue.main.async {
