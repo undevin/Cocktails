@@ -12,6 +12,11 @@
 		0325B56725C20CF800AB3799 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0325B56525C20CF800AB3799 /* Main.storyboard */; };
 		0325B56925C20CFD00AB3799 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0325B56825C20CFD00AB3799 /* Assets.xcassets */; };
 		0325B56C25C20CFD00AB3799 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0325B56A25C20CFD00AB3799 /* LaunchScreen.storyboard */; };
+		0325B57F25C20E2F00AB3799 /* Drink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0325B57E25C20E2F00AB3799 /* Drink.swift */; };
+		0325B58325C20F4600AB3799 /* DrinkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0325B58225C20F4600AB3799 /* DrinkController.swift */; };
+		0325B58725C212EB00AB3799 /* DrinkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0325B58625C212EB00AB3799 /* DrinkError.swift */; };
+		0325B58C25C218EA00AB3799 /* DrinksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0325B58B25C218EA00AB3799 /* DrinksViewController.swift */; };
+		0325B58F25C224B000AB3799 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0325B58E25C224B000AB3799 /* UIViewControllerExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +27,11 @@
 		0325B56825C20CFD00AB3799 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0325B56B25C20CFD00AB3799 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0325B56D25C20CFD00AB3799 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0325B57E25C20E2F00AB3799 /* Drink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drink.swift; sourceTree = "<group>"; };
+		0325B58225C20F4600AB3799 /* DrinkController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkController.swift; sourceTree = "<group>"; };
+		0325B58625C212EB00AB3799 /* DrinkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkError.swift; sourceTree = "<group>"; };
+		0325B58B25C218EA00AB3799 /* DrinksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinksViewController.swift; sourceTree = "<group>"; };
+		0325B58E25C224B000AB3799 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,9 +64,10 @@
 		0325B55E25C20CF800AB3799 /* Cocktails */ = {
 			isa = PBXGroup;
 			children = (
-				0325B57825C20D2B00AB3799 /* Views */,
-				0325B57725C20D2600AB3799 /* Controllers */,
+				0325B58525C212A700AB3799 /* Helpers */,
 				0325B57625C20D1F00AB3799 /* Model */,
+				0325B57725C20D2600AB3799 /* Controllers */,
+				0325B57825C20D2B00AB3799 /* Views */,
 				0325B57425C20D0F00AB3799 /* Resources */,
 			);
 			path = Cocktails;
@@ -76,6 +87,7 @@
 		0325B57625C20D1F00AB3799 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				0325B57E25C20E2F00AB3799 /* Drink.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -83,6 +95,8 @@
 		0325B57725C20D2600AB3799 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				0325B57D25C20E0A00AB3799 /* Model Controller */,
+				0325B57C25C20E0300AB3799 /* View Controllers */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -102,6 +116,31 @@
 				0325B56A25C20CFD00AB3799 /* LaunchScreen.storyboard */,
 			);
 			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		0325B57C25C20E0300AB3799 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				0325B58B25C218EA00AB3799 /* DrinksViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		0325B57D25C20E0A00AB3799 /* Model Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0325B58225C20F4600AB3799 /* DrinkController.swift */,
+			);
+			path = "Model Controller";
+			sourceTree = "<group>";
+		};
+		0325B58525C212A700AB3799 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				0325B58625C212EB00AB3799 /* DrinkError.swift */,
+				0325B58E25C224B000AB3799 /* UIViewControllerExtension.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -174,7 +213,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0325B58725C212EB00AB3799 /* DrinkError.swift in Sources */,
+				0325B58325C20F4600AB3799 /* DrinkController.swift in Sources */,
 				0325B56025C20CF800AB3799 /* AppDelegate.swift in Sources */,
+				0325B58C25C218EA00AB3799 /* DrinksViewController.swift in Sources */,
+				0325B57F25C20E2F00AB3799 /* Drink.swift in Sources */,
+				0325B58F25C224B000AB3799 /* UIViewControllerExtension.swift in Sources */,
 				0325B56225C20CF800AB3799 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -323,7 +367,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = Cocktails/Info.plist;
+				INFOPLIST_FILE = Cocktails/Resources/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -341,7 +386,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = Cocktails/Info.plist;
+				INFOPLIST_FILE = Cocktails/Resources/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
