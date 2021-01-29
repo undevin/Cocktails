@@ -16,7 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="P4C-9j-0hm">
+                            <searchBar contentMode="redraw" placeholder="FInd your drink" translatesAutoresizingMaskIntoConstraints="NO" id="P4C-9j-0hm">
                                 <rect key="frame" x="0.0" y="54" width="414" height="56"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
@@ -26,23 +26,6 @@
                                     <constraint firstAttribute="height" constant="300" id="XsX-5j-O24"/>
                                 </constraints>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="19" translatesAutoresizingMaskIntoConstraints="NO" id="GAE-CR-Yo9">
-                                <rect key="frame" x="41.5" y="470" width="331" height="75.5"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" (Drink) " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DIm-rH-Dj9">
-                                        <rect key="frame" x="115" y="0.0" width="101.5" height="36"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" (instructions) " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oZb-SJ-Gat">
-                                        <rect key="frame" x="110.5" y="55" width="110.5" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                            </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eLT-nl-FwR">
                                 <rect key="frame" x="15" y="805" width="384" height="42"/>
                                 <color key="backgroundColor" systemColor="linkColor"/>
@@ -54,19 +37,35 @@
                                     <action selector="randomDrinkButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6du-pM-48b"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Find Your Drink" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4kk-RR-fIO">
+                                <rect key="frame" x="109.5" y="470" width="195.5" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Rxn-Ss-hS0">
+                                <rect key="frame" x="41.5" y="531" width="331" height="254"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="GAE-CR-Yo9" firstAttribute="top" secondItem="FWr-ET-PYy" secondAttribute="bottom" constant="50" id="1Uz-Lx-dtp"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="eLT-nl-FwR" secondAttribute="trailing" constant="15" id="4Yw-tg-hRk"/>
+                            <constraint firstItem="4kk-RR-fIO" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="53c-TH-zlh"/>
+                            <constraint firstItem="4kk-RR-fIO" firstAttribute="top" secondItem="FWr-ET-PYy" secondAttribute="bottom" constant="50" id="BG6-Nj-lpT"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="eLT-nl-FwR" secondAttribute="bottom" constant="15" id="DsV-WE-Fbg"/>
-                            <constraint firstItem="GAE-CR-Yo9" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.8" id="YEB-xw-gYF"/>
+                            <constraint firstItem="Rxn-Ss-hS0" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.8" id="Igm-cU-BOV"/>
                             <constraint firstItem="FWr-ET-PYy" firstAttribute="top" secondItem="P4C-9j-0hm" secondAttribute="bottom" constant="10" id="ZA7-Ht-7ic"/>
                             <constraint firstItem="FWr-ET-PYy" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="a58-cI-qt3"/>
+                            <constraint firstItem="Rxn-Ss-hS0" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="djB-FU-Yqh"/>
                             <constraint firstItem="P4C-9j-0hm" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="e7Q-pe-BWG"/>
-                            <constraint firstItem="GAE-CR-Yo9" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="jUX-8K-fq3"/>
+                            <constraint firstItem="Rxn-Ss-hS0" firstAttribute="top" secondItem="4kk-RR-fIO" secondAttribute="bottom" constant="25" id="fKq-Qu-VcU"/>
                             <constraint firstItem="P4C-9j-0hm" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="mxb-Bc-Gpc"/>
+                            <constraint firstItem="eLT-nl-FwR" firstAttribute="top" secondItem="Rxn-Ss-hS0" secondAttribute="bottom" constant="20" id="sHU-aw-Y4Z"/>
                             <constraint firstItem="P4C-9j-0hm" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="tKz-bO-1fa"/>
                             <constraint firstItem="eLT-nl-FwR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="ycv-zK-qCG"/>
                             <constraint firstItem="FWr-ET-PYy" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.7" id="z8T-a4-VCu"/>
@@ -74,17 +73,20 @@
                     </view>
                     <connections>
                         <outlet property="drinkImageView" destination="FWr-ET-PYy" id="igi-Vl-wax"/>
-                        <outlet property="drinkInstructionsLabel" destination="oZb-SJ-Gat" id="dHl-BJ-zwr"/>
-                        <outlet property="drinkNameLabel" destination="DIm-rH-Dj9" id="HuQ-KA-osS"/>
+                        <outlet property="drinkInstructionTextView" destination="Rxn-Ss-hS0" id="ozQ-3h-2ca"/>
+                        <outlet property="drinkNameLabel" destination="4kk-RR-fIO" id="qLn-2n-131"/>
                         <outlet property="searchBar" destination="P4C-9j-0hm" id="O0x-5x-JzU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-197" y="119"/>
+            <point key="canvasLocation" x="713.04347826086962" y="118.52678571428571"/>
         </scene>
     </scenes>
     <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="linkColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

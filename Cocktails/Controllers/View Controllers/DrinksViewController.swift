@@ -13,28 +13,20 @@ class DrinksViewController: UIViewController {
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var drinkImageView: UIImageView!
     @IBOutlet weak var drinkNameLabel: UILabel!
-    @IBOutlet weak var drinkInstructionsLabel: UILabel!
-    
+    @IBOutlet weak var drinkInstructionTextView: UITextView!
     
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         searchBar.delegate = self
+        randomDrink()
+        drinkInstructionTextView.layer.borderWidth = 1
     }
     
     // MARK: - Actions
     @IBAction func randomDrinkButtonTapped(_ sender: UIButton) {
-        DrinkController.fetchRandomDrink { (result) in
-            DispatchQueue.main.async {
-                switch result {
-                case .success(let drink):
-                    self.fetchandUpdateViews(drink: drink)
-                case .failure(let error):
-                    self.presentErrorToUser(localizedError: error)
-                }
-            }
-        }
+        randomDrink()
     }
     
     // MARK: - Methods
@@ -45,7 +37,20 @@ class DrinksViewController: UIViewController {
                 case .success(let thumbnail):
                     self.drinkImageView.image = thumbnail
                     self.drinkNameLabel.text = drink.strDrink
-                    self.drinkInstructionsLabel.text = drink.strInstructions
+                    self.drinkInstructionTextView.text = "Instructions: \n\(drink.strInstructions)"
+                case .failure(let error):
+                    self.presentErrorToUser(localizedError: error)
+                }
+            }
+        }
+    }
+    
+    func randomDrink() {
+        DrinkController.fetchRandomDrink { (result) in
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let drink):
+                    self.fetchandUpdateViews(drink: drink)
                 case .failure(let error):
                     self.presentErrorToUser(localizedError: error)
                 }
